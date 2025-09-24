@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="RPS.css" />
+  <title>Rock Paper Scissors</title>
+
+</head>
+<body>
+  <div class="container" role="application" aria-label="Rock Paper Scissors game">
+    <div class="left">
+      <h1>Rock · Paper · Scissors</h1>
+      <p class="lead">Pick an option to play against the computer. Tracks wins, losses, and ties.</p>
+
+      <div class="choices" role="group" aria-label="choices">
+        <button class="btn" data-move="rock" title="Rock">
+          <div class="emoji">✊</div><div class="label">Rock</div>
+        </button>
+        <button class="btn" data-move="paper" title="Paper (P)">
+          <div class="emoji">✋</div><div class="label">Paper</div>
+        </button>
+        <button class="btn" data-move="scissors" title="Scissors (S)">
+          <div class="emoji">✌️</div><div class="label">Scissors</div>
+        </button>
+      </div>
+
+      <div class="resultCard" aria-live="polite">
+        <div class="pick" id="playerPick">—</div>
+        <div style="text-align:center; flex:1">
+          <div class="versus">YOU <span style="opacity:.5">vs</span> COMPUTER</div>
+          <div style="height:8px"></div>
+          <div class="message" id="resultMsg">Make your move</div>
+        </div>
+        <div class="pick" id="computerPick">—</div>
+      </div>
+
+      <div class="history" id="historyList" aria-label="game history"></div>
+    </div>
+
+    <aside class="right" aria-label="scoreboard">
+      <div class="score">
+        <div class="score-item">
+          <div class="badge wins">🏆</div>
+          <div>
+            <div style="font-weight:700" id="wins">0</div>
+            <div class="meta">Wins</div>
+          </div>
+        </div>
+
+        <div class="score-item">
+          <div class="badge loss">💥</div>
+          <div>
+            <div style="font-weight:700" id="losses">0</div>
+            <div class="meta">Losses</div>
+          </div>
+        </div>
+
+        <div class="score-item">
+          <div class="badge ties">🤝</div>
+          <div>
+            <div style="font-weight:700" id="ties">0</div>
+            <div class="meta">Ties</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="meta" style="margin-top:8px">Streak: <strong id="streak">0</strong></div>
+      <div class="meta" style="margin-top:4px">Total games: <strong id="total">0</strong></div>
+
+      <div class="controls">
+        <button class="small" id="undoBtn" title="Undo last game">Undo</button>
+        <button class="small" id="resetBtn" title="Reset all scores">Reset</button>
+        <button class="small primary" id="autoPlayBtn" title="Auto play 10 rounds">Auto-play</button>
+      </div>
+      <div style="font-size:12px; color:var(--muted); margin-top:8px">Local scores persist in your browser</div>
+    </aside>
+  </div>
+
+  <script src="RPS.js"></script>
+</body>
+</html>
